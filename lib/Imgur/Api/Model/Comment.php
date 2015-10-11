@@ -16,98 +16,98 @@ class Comment {
      * 
      * @var string
      */
-    private $id;
+    public $id;
     
     /**
      * The ID of the image that the comment is for
      * 
      * @var string
      */
-    private $imageId;
+    public $imageId;
     
     /**
      * The comment itself.
      * 
      * @var string
      */
-    private $comment;
+    public $comment;
     
     /**
      * Username of the author of the comment
      * 
      * @var string
      */
-    private $author;
+    public $author;
     
     /**
      * The account ID for the author
      * 
      * @var integer
      */
-    private $authorId;
+    public $authorId;
     
     /**
      * If this comment was done to an album
      * 
      * @var boolean
      */
-    private $onAlbum;
+    public $onAlbum;
     
     /**
      * The ID of the album cover image, this is what should be displayed for album comments
      * 
      * @var integer
      */
-    private $albumCover;
+    public $albumCover;
     
     /**
      * Number of upvotes for the comment
      * 
      * @var integer
      */
-    private $ups;
+    public $ups;
     
     /**
      * Number of downvotes for the comment
      * 
      * @var integer
      */
-    private $downs;
+    public $downs;
     
     /**
      * The number of upvotes - downvotes
      * 
      * @var float
      */
-    private $points;
+    public $points;
     
     /**
      * Timestamp of creation, epoch time
      * 
      * @var integer
      */
-    private $datetime;
+    public $datetime;
     
     /**
      * If this is a reply, this will be the value of the comment_id for the comment this a reply for.
      * 
      * @var integer
      */
-    private $parentId;
+    public $parentId;
     
     /**
      * Marked true if this comment has been deleted
      * 
      * @var boolean
      */
-    private $deleted;
+    public $deleted;
     
     /**
      * All of the replies for this comment. If there are no replies to the comment then this is an empty set.
      * 
      * @var \Imgur\Api\Model\Comment|array
      */
-    private $children;
+    public $children;
 
 
     /**
@@ -141,7 +141,10 @@ class Comment {
                 $children[] = new Comment($comment);
             }
             $this->setChildren($children);
-        }        
+        }
+        else{
+			$this->setChildren(array());
+		}        
         
         return $this;
     }
