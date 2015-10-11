@@ -1,8 +1,8 @@
 {
-    "name": "adyg/php-imgur-api-client",
+    "name": "billmalarky/php-imgur-api-client",
     "type": "library",
     "description": "Imgur API v3 client",
-    "homepage": "https://github.com/Adyg/php-imgur-api-client",
+    "homepage": "https://github.com/billmalarky/php-imgur-api-client",
     "keywords": ["imgur", "api"],
     "license": "MIT",
     "authors": [
@@ -10,6 +10,11 @@
             "name": "Adrian Ghiuta",
             "email": "adrian.ghiuta@gmail.com",
             "homepage": "http://adyg.github.com"
+        },
+        {
+            "name": "Reid Mayo",
+            "email": "reidmayo@gmail.com",
+            "homepage": "http://reidmayo.com"
         }
     ],
     "autoload": {

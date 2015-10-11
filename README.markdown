@@ -1,3 +1,6 @@
+# Note: If you aren't me do not use this fork.
+Use the original from Adyg https://github.com/Adyg/php-imgur-api-client. I mean, it's a free country, but I'm not maintaining this for general use so expect bugs.
+
 # PHP Imgur API Client
 
 Object Oriented PHP wrapper for the Imgur API. 
