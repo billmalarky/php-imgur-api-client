@@ -30,7 +30,7 @@ class Comment {
      * 
      * @var string
      */
-    private $caption;
+    private $comment;
     
     /**
      * Username of the author of the comment
@@ -89,14 +89,14 @@ class Comment {
     private $datetime;
     
     /**
-     * If this is a reply, this will be the value of the comment_id for the caption this a reply for.
+     * If this is a reply, this will be the value of the comment_id for the comment this a reply for.
      * 
      * @var integer
      */
     private $parentId;
     
     /**
-     * Marked true if this caption has been deleted
+     * Marked true if this comment has been deleted
      * 
      * @var boolean
      */
@@ -124,7 +124,7 @@ class Comment {
         $this->setAlbumCover($parameters['album_cover'])
              ->setAuthor($parameters['author'])
              ->setAuthorId($parameters['author_id'])
-             ->setCaption($parameters['caption'])
+             ->setComment($parameters['comment'])
              ->setDatetime($parameters['datetime'])
              ->setDeleted($parameters['deleted'])
              ->setDowns($parameters['downs'])
@@ -140,7 +140,7 @@ class Comment {
             foreach($parameters['children'] as $comment) {
                 $children[] = new Comment($comment);
             }
-            $this->setComments($children);
+            $this->setChildren($children);
         }        
         
         return $this;
@@ -195,19 +195,19 @@ class Comment {
      * 
      * @return string
      */
-    public function getCaption() {
+    public function getComment() {
         
-        return $this->caption;
+        return $this->comment;
     }
 
     /**
      * The comment itself.
      * 
-     * @param string $caption
+     * @param string $comment
      * @return \Imgur\Api\Model\Comment
      */
-    public function setCaption($caption) {
-        $this->caption = $caption;
+    public function setComment($comment) {
+        $this->comment = $comment;
                 
         return $this;
     }
@@ -388,7 +388,7 @@ class Comment {
     }
     
     /**
-     * If this is a reply, this will be the value of the comment_id for the caption this a reply for.
+     * If this is a reply, this will be the value of the comment_id for the comment this a reply for.
      * 
      * @return integer
      */
@@ -398,7 +398,7 @@ class Comment {
     }
 
     /**
-     * If this is a reply, this will be the value of the comment_id for the caption this a reply for.
+     * If this is a reply, this will be the value of the comment_id for the comment this a reply for.
      * 
      * @param integer $parentId
      * @return \Imgur\Api\Model\Comment
@@ -410,7 +410,7 @@ class Comment {
     }
 
     /**
-     * Marked true if this caption has been deleted
+     * Marked true if this comment has been deleted
      * 
      * @return boolean
      */
@@ -420,7 +420,7 @@ class Comment {
     }
 
     /**
-     * Marked true if this caption has been deleted
+     * Marked true if this comment has been deleted
      * 
      * @param boolean $deleted
      * @return \Imgur\Api\Model\Comment
