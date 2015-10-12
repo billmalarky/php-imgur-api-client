@@ -210,10 +210,6 @@ class Account extends AbstractApi {
     public function albums($username = 'me', $page = 0) {
         $parameters = $this->get('account/'.$username.'/albums/'.$page);
         
-        if(empty($parameters['data'])) {
-            throw new \Imgur\Exception\RuntimeException('An error occured while attempting to retrieve albums for '.$username.':'.$parameters['error']['message']);
-        }
-        
         $albums = array();
         
         foreach($parameters['data'] as $parameter) {
