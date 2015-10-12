@@ -207,8 +207,8 @@ class Account extends AbstractApi {
      * @return \Imgur\Api\Model\Album|array
      * @throws \Imgur\Exception\RuntimeException
      */
-    public function albums($username = 'me') {
-        $parameters = $this->get('account/'.$username.'/albums');
+    public function albums($username = 'me', $page = 0) {
+        $parameters = $this->get('account/'.$username.'/albums/'.$page);
         
         if(empty($parameters['data'])) {
             throw new \Imgur\Exception\RuntimeException('An error occured while attempting to retrieve albums for '.$username.':'.$parameters['error']['message']);
@@ -350,8 +350,8 @@ class Account extends AbstractApi {
      * @param string $username
      * @return \Imgur\Api\Model\Image
      */
-    public function images($username = 'me') {
-        $parameters = $this->get('account/'.$username.'/images');
+    public function images($username = 'me', $page = 0) {
+        $parameters = $this->get('account/'.$username.'/images/'.$page);
         
         $images = array();
         
