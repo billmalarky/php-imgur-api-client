@@ -280,8 +280,8 @@ class Account extends AbstractApi {
      * @param string $username
      * @return \Imgur\Api\Model\Comment
      */
-    public function comments($username = 'me') {
-        $parameters = $this->get('account/'.$username.'/comments');
+    public function comments($username = 'me', $sort = 'newest', $page = '0') {
+        $parameters = $this->get('account/'.$username.'/comments/'.$sort.'/'.$page);
         
         $comments = array();
         
